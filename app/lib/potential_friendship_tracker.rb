@@ -28,10 +28,14 @@ class PotentialFriendshipTracker
       redis.zrem("interactions:#{account_id}", target_account_id)
     end
 
-    def get(account_id, limit: 20, offset: 0)
-      account_ids = redis.zrevrange("interactions:#{account_id}", offset, limit)
-      return [] if account_ids.empty?
-      Account.searchable.where(id: account_ids)
+    def get(account, limit: 20, offset: 0)
+      account_ids          = redis.zrevrange("interactions:#{account.id}", offset, limit)
+      fallback_account_ids = redis.zrevrange("follow_recommendations:#{account.user_locale}", 0, -1)
+
+      [].tap do |accounts|
+        accounts.concat(Account.searchable.where(id: account_ids)) unless account_ids.empty?
+        accounts.concat(Account.followable_by(account).not_excluded_by_account(account).not_domain_blocked_by_account(account).where(id: fallback_account_ids).limit(limit - accounts.size)) if accounts.size < limit && offset.zero? && fallback_account_ids.size.positive?
+      end
     end
   end
 end

@@ -7,5 +7,6 @@ class Scheduler::InstanceRefreshScheduler
 
   def perform
     Instance.refresh
+    AccountSummary.refresh
   end
 end
