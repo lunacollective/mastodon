@@ -60,6 +60,7 @@ aliases:
         command: |
           sudo apt-get update
           sudo apt-get install -y libicu-dev libidn11-dev libprotobuf-dev protobuf-compiler
+          gem install bundler
 
   - &install_ruby_dependencies
       steps:
