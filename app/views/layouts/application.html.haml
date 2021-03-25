@@ -39,5 +39,5 @@
     = content_for?(:content) ? yield(:content) : yield
 
     .logo-resources
-      = render raw: Rails.root.join('app', 'javascript', 'images', 'logo_transparent.svg')
-      = render raw: Rails.root.join('app', 'javascript', 'images', 'logo_full.svg')
+      = render html: Rails.root.join('app', 'javascript', 'images', 'logo_transparent.svg')
+      = render html: Rails.root.join('app', 'javascript', 'images', 'logo_full.svg')
