@@ -59,7 +59,7 @@
   },
   "private": true,
   "dependencies": {
-    "@babel/core": "^7.13.10",
+    "@babel/core": "^7.13.14",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/plugin-proposal-decorators": "^7.13.5",
     "@babel/plugin-transform-react-inline-elements": "^7.12.13",
@@ -134,7 +134,7 @@
     "react-motion": "^0.5.2",
     "react-notification": "^6.8.5",
     "react-overlays": "^0.9.3",
-    "react-redux": "^7.2.2",
+    "react-redux": "^7.2.3",
     "react-redux-loading-bar": "^4.0.8",
     "react-router-dom": "^4.1.1",
     "react-router-scroll-4": "^1.0.0-beta.1",
