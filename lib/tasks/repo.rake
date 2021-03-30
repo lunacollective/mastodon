@@ -8,12 +8,12 @@ namespace :repo do
       Authors
       =======
 
-      Mastodon is available on [GitHub](https://github.com/tootsuite/mastodon)
+      Mastodon is available on [GitHub](https://github.com/lunacollective/mastodon)
       and provided thanks to the work of the following contributors:
 
     HEADER
 
-    url = 'https://api.github.com/repos/tootsuite/mastodon/contributors?anon=1'
+    url = 'https://api.github.com/repos/lunacollective/mastodon/contributors?anon=1'
     HttpLog.config.compact_log = true
     while url.present?
       response = HTTP.get(url)
