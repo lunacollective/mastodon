@@ -21,7 +21,7 @@ module Mastodon
     end
 
     def suffix
-      '+lunacollective'
+      '+luna'
     end
 
     def to_a
